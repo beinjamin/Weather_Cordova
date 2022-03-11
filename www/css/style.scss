@@ -1,0 +1,55 @@
+@import "compass";
+
+$default-transition-duration:.3s;
+$duration:.5s;
+
+$icon-sprite-dimensions:true;
+$icon-layout:smart;
+@import "icon/*.png";
+
+@include global-reset;
+@include all-icon-sprites;
+
+*{ @include box-sizing (border-box); }
+
+input, textarea { border: none; -webkit-appearance: none; @include border-radius (0px); }
+
+
+body { 
+    color: #8f99b7;
+    font-family: "Ubuntu";
+    font-size: 16px;
+    background-color: #1f253d;
+}
+
+i{display: inline-block;}
+h1{
+    font-size: 28px; 
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin: 45px 0 ;
+    display: none;
+}
+
+p {
+    margin: 1em 0px; @include clearfix;
+    input.text{
+        display: block;
+        width: 100%;
+        height: 48%;
+        border: 1px solod #1f253d;
+        background-color: #4f597b;
+        color: #fff;
+        font-size: 16px;
+        padding-left: 10px;
+        outline: none;
+        @include border-radius(4px);
+        @include background-clip(padding-box);
+        @include transition-duration;
+        &:focus{
+            border: 1px solid #11a7ab;
+        }
+    }
+    
+}
